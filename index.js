@@ -6,6 +6,10 @@ app.use(express.json())
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
+
 app.post('/split-payments/compute', async (req, res) => {
     const {ID, Amount, SplitInfo } = req.body
     balance = Amount
